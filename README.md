@@ -8,7 +8,7 @@ bundle install
 installiert die benötigten gems
 
 ## Usage
-Aufruf: cucumber TARGET=test FE=ETH features/suche.feature --format html >output20160607.html
+Aufruf: cucumber [TARGET=test] [features/suche.feature] [--format html >output20170922.html]
 
 ## configs
 TODO

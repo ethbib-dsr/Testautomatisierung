@@ -1,6 +1,18 @@
-# read configs
+require 'capybara/cucumber'
 
-targets = YAML.load_file('features/support/config.yml')
+# use firefox
 
-ENV['TARGET'] ? my_env = ENV['TARGET'].downcase : my_env = "test"
-$startseite = targets[my_env]['url']
+Capybara.register_driver :selenium_firefox do |app|
+  Capybara::Selenium::Driver.new(app, :browser => :firefox)
+end
+Capybara.javascript_driver = :selenium_firefox
+Capybara.default_driver = :selenium_firefox
+Capybara.default_max_wait_time = 15
+
+# use chrome
+# Capybara.register_driver :chrome do |app|
+#   Capybara::Selenium::Driver.new(app, :browser => :chrome)
+# end
+
+# Capybara.default_driver = :chrome
+# Capybara.javascript_driver = :chrome

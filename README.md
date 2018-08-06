@@ -22,7 +22,9 @@ firefox: https://github.com/mozilla/geckodriver/releases
 ## Usage
 Aufruf: cucumber [features/suche.feature] [--format html >output20170922.html]
 
-# capybara cheet sheet #
+# capybara cheat sheet #
+Taken from https://launchacademy.com/codecabulary/learn-test-driven-development/rspec/capybara-cheat-sheet
+
 ## Navigating##
     visit('/projects')
     visit(post_comments_path(post))

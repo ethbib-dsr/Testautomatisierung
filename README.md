@@ -25,18 +25,18 @@ Aufruf: cucumber [features/suche.feature] [--format html >output20170922.html]
 # capybara cheat sheet #
 Taken from https://launchacademy.com/codecabulary/learn-test-driven-development/rspec/capybara-cheat-sheet
 
-## Navigating##
+## Navigating
     visit('/projects')
     visit(post_comments_path(post))
 
-## Clicking links and buttons##
+## Clicking links and buttons
     click_link('id-of-link')
     click_link('Link Text')
     click_button('Save')
     click('Link Text') # Click either a link or a button
     click('Button Value')
 
-## Interacting with forms##
+## Interacting with forms
     fill_in('First Name', :with ## > 'John')
     fill_in('Password', :with ## > 'Seekrit')
     fill_in('Description', :with ## > 'Really Long Text…')
@@ -46,7 +46,7 @@ Taken from https://launchacademy.com/codecabulary/learn-test-driven-development/
     attach_file('Image', '/path/to/image.jpg')
     select('Option', :from ## > 'Select Box')
 
-## scoping##
+## scoping
     within("//li[@id## 'employee']") do
       fill_in 'Name', :with ## > 'Jimmy'
     end
@@ -60,7 +60,7 @@ Taken from https://launchacademy.com/codecabulary/learn-test-driven-development/
       fill_in 'Name', :with ## > 'Jimmy'
     end
 
-## Querying##
+## Querying
     page.has_xpath?('//table/tr')
     page.has_css?('table tr.foo')
     page.has_content?('foo')
@@ -75,20 +75,20 @@ Taken from https://launchacademy.com/codecabulary/learn-test-driven-development/
     locate("//*[@id## 'overlay'").find("//h1").click
     all('a').each { |a| a[:href] }
 
-## Scripting##
+## Scripting
     result ##  page.evaluate_script('4 + 4');
 
-## Debugging##
+## Debugging
     save_and_open_page
 
-## Asynchronous JavaScript##
+## Asynchronous JavaScript
     click_link('foo')
     click_link('bar')
     page.should have_content('baz')
     page.should_not have_xpath('//a')
     page.should have_no_xpath('//a')
 
-## XPath and CSS##
+## XPath and CSS
     within(:css, 'ul li') { ... }
     find(:css, 'ul li').text
     locate(:css, 'input#name').value
